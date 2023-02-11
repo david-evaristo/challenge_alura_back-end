@@ -9,3 +9,11 @@ class Video(models.Model):
 
     def __str__(self):
         return self.titulo
+        
+class Categoria(models.Model):
+    titulo = models.CharField(max_length=30)
+    cor = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.titulo
+
