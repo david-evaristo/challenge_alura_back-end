@@ -5,6 +5,8 @@ from django.db import models
 class Categoria(models.Model):
     titulo = models.CharField(max_length=30)
     cor = models.CharField(max_length=100)
+    class Meta:
+        ordering = ['id']
     
     def __str__(self):
         return self.titulo
@@ -14,6 +16,8 @@ class Video(models.Model):
     descricao = models.CharField(max_length=100, blank=False)
     url = models.CharField(max_length=50, blank=False)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True, default=1, blank=False)
+    class Meta:
+        ordering = ['id']
 
     def __str__(self):
         return self.titulo

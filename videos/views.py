@@ -11,7 +11,7 @@ class VideosViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         return VideoSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    ordering_fields = ['id','titulo']
+    ordering_fields = ['id']
     search_fields = ['titulo']
 
 class CategoriasViewSet(viewsets.ModelViewSet):
@@ -20,7 +20,7 @@ class CategoriasViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         return CategoriaSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    ordering_fields = ['id','titulo']
+    ordering_fields = ['id']
     search_fields = ['titulo']
 
 class ListaCategoriasVideos(generics.ListAPIView):
@@ -30,5 +30,5 @@ class ListaCategoriasVideos(generics.ListAPIView):
         return queryset
     serializer_class = ListaCategoriasVideosSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    ordering_fields = ['id','titulo']
+    ordering_fields = ['id']
     search_fields = ['titulo']
