@@ -10,6 +10,7 @@ class VideosViewSet(viewsets.ModelViewSet):
     queryset = Video.objects.all()
     def get_serializer_class(self):
         return VideoSerializer
+    http_method_names = ['get', 'post', 'put', 'path', 'delete']
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['id']
     search_fields = ['titulo']
